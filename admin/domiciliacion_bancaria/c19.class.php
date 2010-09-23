@@ -20,9 +20,9 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  *
  * @package    c19.class.php
- * @author     Eduardo Gonzalez Rueda <egrueda@gmail.com>
- * @copyright  2010 Eduardo Gonzalez Rueda
- * @version    1.2.0
+ * @author     Eduardo Gonzalez <egonzalez@cyberpymes.com>
+ * @copyright  2010 CyberPymes
+ * @version    1.2.1
  * @license    http://www.gnu.org/copyleft/lesser.html  LGPL License 3
  *
 **/
@@ -39,6 +39,19 @@ class C19 {
 	var $sufijo   = "";
 	var $concepto = "";
 	
+	// Constructor for php4
+	function C19($config_wdb) {
+		$this->name     = $this->string_format($config_wdb['name']);
+		$this->nif      = $config_wdb['nif'];
+		$this->entidad  = $this->ccparts($config_wdb['cc'], 1);
+		$this->oficina  = $this->ccparts($config_wdb['cc'], 2);
+		$this->dc       = $this->ccparts($config_wdb['cc'], 3);
+		$this->cuenta   = $this->ccparts($config_wdb['cc'], 4);
+		$this->sufijo   = $this->string_format($config_wdb['sufijo']);
+		$this->concepto = $this->string_format($config_wdb['concepto']);
+	}
+
+	// Constructor for php5
 	function __construct($config_wdb) {
 		$this->name     = $this->string_format($config_wdb['name']);
 		$this->nif      = $config_wdb['nif'];
