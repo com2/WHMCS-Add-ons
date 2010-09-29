@@ -22,7 +22,7 @@
  * @package    domiciliacion_bancaria.php
  * @author     Eduardo Gonzalez <egrueda at gmail dot com>
  * @copyright  2010 Eduardo Gonzalez
- * @version    1.2.9
+ * @version    1.2.10
  * @license    http://www.gnu.org/copyleft/lesser.html  LGPL License 3
  *
 **/
@@ -392,9 +392,15 @@ function generar_tab_facturas() {
 			// Defino el campo del titular de la cuenta
 			if(empty($config_wdb['customfield_tit'])) $config_wdb['customfield_tit'] = 'n';
 			switch($config_wdb['customfield_tit']) {
-				case 'n': $nombre_cliente = $row['cliente'];		 break;  // Utilizo el nombre completo
-				case 'c': $nombre_cliente = $row['companyname']; break;  // Utilizo el nombre de la empresa
-				default:  $nombre_cliente = $row['titular'];     break;  // Utilizo el custom field
+				case 'n':	// Utilizo el nombre completo 
+					$nombre_cliente = $row['cliente'];		 
+					break; 
+				case 'c':	// Utilizo el nombre de la empresa (fallback al nombre del cliente)
+					$nombre_cliente = ($row['companyname']) ? $row['companyname'] : $row['cliente'];
+					break;  
+				default:	// Utilizo el custom field  
+					$nombre_cliente = $row['titular'];     
+					break;
 			}
 
 			// Validacion de CC
@@ -596,12 +602,23 @@ function sql_dropdown($label, $table, $value="", $name, $selected="", $orderby="
 
 # Informacion de depuracion (si debug=1)
 function debug($string) {
+	global $config_wdb, $module_path, $module_name, $modulelink;
+
 	global $debug;
 	if(!$debug) return;
 	echo "<pre>\n";
 	if(is_array($string)) print_r($string);
 	else echo $string;
 	echo "</pre>\n";
+
+	// logs to file
+	$c19_logfile = "$module_path/".date("Ymd").".log";
+	$fp_log = fopen($c19_logfile, "a");
+	fputs($fp_log, "- - -\n");
+	fputs($fp_log, print_r($string, true));
+	fputs($fp_log, "\n");
+	fclose($fp_log);
+	
 }
 
 function generar_c19($selectedinvoices="") {
@@ -609,9 +626,9 @@ function generar_c19($selectedinvoices="") {
 
 	// Salto de linea segun configuracion
 	switch($config_wdb['line_feed']) {
-		case 0: 	$EOL = "\n"; 		break;
+		case 0: 	$EOL = "\n"; 						break;
 		case 1: 	$EOL = chr(13).chr(10);	break;
-		default: 	$EOL = "\n";		break;
+		default: 	$EOL = "\n";						break;
 	}
 	
 	$this_time = time();
@@ -650,9 +667,11 @@ function generar_c19($selectedinvoices="") {
 
 	## Cabecera de presentador
 	$cabecera_presentador = $c19->cabecera_presentador();
+	debug("[$cabecera_presentador]"); 
 	
 	## Cabecera de ordenante
 	$cabecera_ordenante = $c19->cabecera_ordenante();
+	debug("[$cabecera_ordenante]");
 
 	## Individual obligatorio
 	unset($historial);
@@ -662,9 +681,15 @@ function generar_c19($selectedinvoices="") {
 		// Defino el campo del titular de la cuenta
 		if(empty($config_wdb['customfield_tit'])) $config_wdb['customfield_tit'] = 'n';
 		switch($config_wdb['customfield_tit']) {
-			case 'n': $data['nombre_cliente'] = $row['cliente'];		 break;  // Utilizo el nombre completo
-			case 'c': $data['nombre_cliente'] = $row['companyname']; break;  // Utilizo el nombre de la empresa
-			default:  $data['nombre_cliente'] = $row['titular'];     break;  // Utilizo el custom field
+			case 'n': 	// Utilizo el nombre completo
+				$data['nombre_cliente'] = $row['cliente'];		 
+				break;
+			case 'c': 	// Utilizo el nombre de la empresa
+				$data['nombre_cliente'] = ($row['companyname']) ? $row['companyname'] : $row['cliente']; 
+				break;
+			default:	// Utilizo el custom field  
+				$data['nombre_cliente'] = $row['titular'];     
+				break;
 		}
 
 		$cod_devolucion = sprintf("%06s", substr($row['invoiceid'], -6));
@@ -736,8 +761,12 @@ function generar_c19($selectedinvoices="") {
 		  list($id_cliente, $cod_devolucion, $ref_interna, $invoiceid, $importe) = $historial[$i];
 			$importe = str_replace(',', '.', $importe);
 			$gatewaymodule = "domiciliacion";
-			$fee = "";
-			$res = addInvoicePayment($invoiceid, $this_time, $importe, $fee, $gatewaymodule);
+			$fee = "0";
+			debug("addInvoicePayment: $invoiceid, $this_time, $importe, $fee, $gatewaymodule");
+			debug("resPayment1: $resPayment");
+			$resPayment = addInvoicePayment($invoiceid, $this_time, $importe, $fee, $gatewaymodule);
+			debug("resPayment2: $resPayment");
+			debug("Transaccion creada: $this_time");
 		}
 		unset($id_cliente, $cod_devolucion, $ref_interna, $invoiceid, $importe);
 	}
