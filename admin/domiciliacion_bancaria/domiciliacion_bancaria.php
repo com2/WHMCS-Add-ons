@@ -22,7 +22,7 @@
  * @package    domiciliacion_bancaria.php
  * @author     Eduardo Gonzalez <egrueda at gmail dot com>
  * @copyright  2010 Eduardo Gonzalez
- * @version    1.2.10
+ * @version    1.2.11
  * @license    http://www.gnu.org/copyleft/lesser.html  LGPL License 3
  *
 **/
