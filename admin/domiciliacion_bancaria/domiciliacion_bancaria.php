@@ -549,8 +549,8 @@ function generar_tab_ajustes() {
 				<tr>
 					<td class="fieldlabel">Marcar facturas como pagadas</td>
 					<td class="fieldarea">'.manual_dropdown("mark_paid", array("0"=>"No", "1"=>"Si"), $config_wdb['mark_paid']).'</td>
-					<td class="fieldlabel">Habilitar modo Debug</td>
-					<td class="fieldarea">'.manual_dropdown("debug", array("0"=>"No", "1"=>"Si"), $config_wdb['debug']).'</td>
+					<td class="fieldlabel">Modo Debug</td>
+					<td class="fieldarea">'.manual_dropdown("debug", array("0"=>"Deshabilitado", "1"=>"En pantalla", "2"=>"En fichero"), $config_wdb['debug']).'</td>
 				</tr>
 			</table>			
 			<img src="images/spacer.gif" height="8" width="1"><br>
@@ -600,25 +600,30 @@ function sql_dropdown($label, $table, $value="", $name, $selected="", $orderby="
 	return $select;
 }
 
-# Informacion de depuracion (si debug=1)
+# Informacion de depuracion (si debug esta habilitado)
 function debug($string) {
 	global $config_wdb, $module_path, $module_name, $modulelink;
 
-	global $debug;
-	if(!$debug) return;
-	echo "<pre>\n";
-	if(is_array($string)) print_r($string);
-	else echo $string;
-	echo "</pre>\n";
-
-	// logs to file
-	$c19_logfile = "$module_path/".date("Ymd").".log";
-	$fp_log = fopen($c19_logfile, "a");
-	fputs($fp_log, "- - -\n");
-	fputs($fp_log, print_r($string, true));
-	fputs($fp_log, "\n");
-	fclose($fp_log);
+	// Si el debug está deshabilitado, salimos
+	if(!$config_wdb['debug']) return;
 	
+	// Debug en pantalla
+	if($config_wdb['debug']=="1") {
+		echo "<pre>\n";
+		if(is_array($string)) print_r($string);
+		else echo $string;
+		echo "</pre>\n";
+	}
+
+	// Debug en fichero
+	if($config_wdb['debug']=="2") {
+		$c19_logfile = "$module_path/".date("Ymd").".log";
+		$fp_log = fopen($c19_logfile, "a");
+		fputs($fp_log, "* LOG" . date("YmdHis") . "\n");
+		fputs($fp_log, print_r($string, true));
+		fputs($fp_log, "\n");
+		fclose($fp_log);
+	}
 }
 
 function generar_c19($selectedinvoices="") {
