@@ -727,17 +727,17 @@ $_ADMINLANG['support']['remove'] = "eliminar";
 $_ADMINLANG['support']['viewprintable'] = "Vista para impresora";
 
 # Network Issues
-$_ADMINLANG['networkissues']['title'] = "Network Issues";
-$_ADMINLANG['networkissues']['open'] = "Open";
-$_ADMINLANG['networkissues']['scheduled'] = "Scheduled";
-$_ADMINLANG['networkissues']['resolved'] = "Resolved";
-$_ADMINLANG['networkissues']['addnew'] = "Add New";
+$_ADMINLANG['networkissues']['title'] = "Incidencias de red";
+$_ADMINLANG['networkissues']['open'] = "Abiertas";
+$_ADMINLANG['networkissues']['scheduled'] = "Programadas";
+$_ADMINLANG['networkissues']['resolved'] = "Resueltas";
+$_ADMINLANG['networkissues']['addnew'] = "Abrir nueva incidencia";
 
 # Reports
 $_ADMINLANG['reports']['title'] = "Informes";
-$_ADMINLANG['reports']['graphs'] = "Graphs";
-$_ADMINLANG['reports']['exports'] = "Exports";
-$_ADMINLANG['reports']['pdfbatch'] = "PDF Batch";
+$_ADMINLANG['reports']['graphs'] = "Gráficos";
+$_ADMINLANG['reports']['exports'] = "Exportar";
+$_ADMINLANG['reports']['pdfbatch'] = "Lote PDF";
 
 # Browser
 $_ADMINLANG['browser']['bookmarks'] = "Bookmarks";
