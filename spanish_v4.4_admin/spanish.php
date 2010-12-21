@@ -1515,19 +1515,19 @@ $_ADMINLANG['supportreq']['debuginfo'] = "You may delete the debug information i
 $_ADMINLANG['supportreq']['cancel'] = "Cancel";
 
 # License
-$_ADMINLANG['license']['title'] = "License Information";
-$_ADMINLANG['license']['regto'] = "Registered To";
-$_ADMINLANG['license']['key'] = "License Key";
-$_ADMINLANG['license']['type'] = "License Type";
-$_ADMINLANG['license']['validdomain'] = "Valid Domain";
-$_ADMINLANG['license']['validip'] = "Valid IP";
-$_ADMINLANG['license']['validdir'] = "Valid Directory";
-$_ADMINLANG['license']['brandingremoval'] = "Branding Removal";
-$_ADMINLANG['license']['created'] = "Created";
-$_ADMINLANG['license']['expires'] = "Expires";
-$_ADMINLANG['license']['reissue1'] = "If you are planning to move your WHMCS System to a new location then you will need to get your license reissued.  See";
-$_ADMINLANG['license']['reissue2'] = "for more info...";
-$_ADMINLANG['license']['updateavailable'] = "An update is available!";
+$_ADMINLANG['license']['title'] = "Información de la licencia";
+$_ADMINLANG['license']['regto'] = "Registrado para";
+$_ADMINLANG['license']['key'] = "Clave de licencia";
+$_ADMINLANG['license']['type'] = "Tipo de licencia";
+$_ADMINLANG['license']['validdomain'] = "Dominio válido";
+$_ADMINLANG['license']['validip'] = "IP válida";
+$_ADMINLANG['license']['validdir'] = "Directorio válido";
+$_ADMINLANG['license']['brandingremoval'] = "Quitar marcas";
+$_ADMINLANG['license']['created'] = "Creado";
+$_ADMINLANG['license']['expires'] = "Caduca";
+$_ADMINLANG['license']['reissue1'] = "Si planea trasladar WHMCS a otra localización, necesitará regenerar su licencia.  Visite";
+$_ADMINLANG['license']['reissue2'] = "para más información...";
+$_ADMINLANG['license']['updateavailable'] = "¡Hay una actualización disponible!";
 
 # Banned Emails
 $_ADMINLANG['bans']['emailtitle'] = "Dominios bloqueados";
