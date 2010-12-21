@@ -873,12 +873,12 @@ $_ADMINLANG['setup']['customfields'] = "Custom Fields";
 
 # Help
 $_ADMINLANG['help']['title'] = "Ayuda";
-$_ADMINLANG['help']['docs'] = "Documentaci&oacute;n ";
-$_ADMINLANG['help']['licenseinfo'] = "Informaci&oacute;n de licencia";
-$_ADMINLANG['help']['changelicense'] = "Cambiar llave de licencia";
-$_ADMINLANG['help']['updates'] = "Chequear actualizaciones";
+$_ADMINLANG['help']['docs'] = "Documentación ";
+$_ADMINLANG['help']['licenseinfo'] = "Información de licencia";
+$_ADMINLANG['help']['changelicense'] = "Cambiar clave de licencia";
+$_ADMINLANG['help']['updates'] = "Comprobar actualizaciones";
 $_ADMINLANG['help']['support'] = "Solicitar soporte";
-$_ADMINLANG['help']['forums'] = "Foros Whmcs";
+$_ADMINLANG['help']['forums'] = "Foros WHMCS";
 
 # Fields
 $_ADMINLANG['fields']['id'] = "ID";
@@ -979,7 +979,7 @@ $_ADMINLANG['fields']['name'] = "Name";
 $_ADMINLANG['fields']['options'] = "Options";
 $_ADMINLANG['fields']['confpassword'] = "Confirm Password";
 $_ADMINLANG['fields']['template'] = "Template";
-$_ADMINLANG['fields']['ipaddress'] = "IP Address";
+$_ADMINLANG['fields']['ipaddress'] = "Dirección IP";
 $_ADMINLANG['fields']['mb'] = "MB";
 $_ADMINLANG['fields']['clientid'] = "Client ID";
 $_ADMINLANG['fields']['userpass'] = "User/Pass";
@@ -1530,26 +1530,26 @@ $_ADMINLANG['license']['reissue2'] = "for more info...";
 $_ADMINLANG['license']['updateavailable'] = "An update is available!";
 
 # Banned Emails
-$_ADMINLANG['bans']['emailtitle'] = "Banned Email Domains";
-$_ADMINLANG['bans']['emailaddsuccess'] = "Banned Email Added!";
-$_ADMINLANG['bans']['emailaddsuccessinfo'] = "New Banned Email Address Added Successfully!";
-$_ADMINLANG['bans']['emaildelsuccess'] = "Banned Email Deleted!";
-$_ADMINLANG['bans']['emaildelsuccessinfo'] = "Banned Email Address Deleted Successfully!";
-$_ADMINLANG['bans']['emaildelsure'] = "Are you sure you want to delete this banned email address?";
-$_ADMINLANG['bans']['onlydomain'] = "Only enter the domain - eg. hotmail.com";
-$_ADMINLANG['bans']['addbannedemail'] = "Add Banned Email";
-$_ADMINLANG['bans']['emaildomain'] = "Email Domain";
-$_ADMINLANG['bans']['usagecount'] = "Usage Count";
-$_ADMINLANG['bans']['iptitle'] = "Banned IPs";
-$_ADMINLANG['bans']['ipaddsuccess'] = "Banned IP Added Successfully!";
-$_ADMINLANG['bans']['ipaddsuccessinfo'] = "New Banned IP Address Added Successfully!";
-$_ADMINLANG['bans']['ipdelsuccess'] = "Banned IP Deleted Successfully!";
-$_ADMINLANG['bans']['ipdelsuccessinfo'] = "Banned IP Address Deleted Successfully!";
-$_ADMINLANG['bans']['ipdelsure'] = "Are you sure you want to delete this banned IP address?";
-$_ADMINLANG['bans']['banreason'] = "Ban Reason";
-$_ADMINLANG['bans']['banexpires'] = "Ban Expires";
-$_ADMINLANG['bans']['format'] = "Format: DD/MM/YYYY HH:MM"; #format cannot be changed, just translated values
-$_ADMINLANG['bans']['addbannedip'] = "Add Banned IP";
+$_ADMINLANG['bans']['emailtitle'] = "Dominios bloqueados";
+$_ADMINLANG['bans']['emailaddsuccess'] = "Nuevo dominio bloqueado";
+$_ADMINLANG['bans']['emailaddsuccessinfo'] = "Se ha añadido correctamente un dominio a la lista de bloqueos";
+$_ADMINLANG['bans']['emaildelsuccess'] = "Dominio eliminado";
+$_ADMINLANG['bans']['emaildelsuccessinfo'] = "Se ha eliminado un dominio de la lista de bloqueos";
+$_ADMINLANG['bans']['emaildelsure'] = "¿Está seguro de que desea eliminar esta dirección de correo bloqueada?";
+$_ADMINLANG['bans']['onlydomain'] = "Introduzca sólo el dominio - ej. hotmail.com";
+$_ADMINLANG['bans']['addbannedemail'] = "Agregar email bloqueado";
+$_ADMINLANG['bans']['emaildomain'] = "Dominio del correo";
+$_ADMINLANG['bans']['usagecount'] = "Veces que se ha usado";
+$_ADMINLANG['bans']['iptitle'] = "IPs bloqueadas";
+$_ADMINLANG['bans']['ipaddsuccess'] = "Nueva IP bloqueada";
+$_ADMINLANG['bans']['ipaddsuccessinfo'] = "Se ha añadido una nueva IP bloqueada";
+$_ADMINLANG['bans']['ipdelsuccess'] = "IP bloqueada eliminada";
+$_ADMINLANG['bans']['ipdelsuccessinfo'] = "Se ha eliminado una IP bloqueada";
+$_ADMINLANG['bans']['ipdelsure'] = "¿Está seguro de que desea eliminar esta dirección IP bloqueada?";
+$_ADMINLANG['bans']['banreason'] = "Razón del bloqueo";
+$_ADMINLANG['bans']['banexpires'] = "Caducidad del bloqueo";
+$_ADMINLANG['bans']['format'] = "Formato: DD/MM/YYYY HH:MM"; #format cannot be changed, just translated values
+$_ADMINLANG['bans']['addbannedip'] = "Añadir IP bloqueada";
 
 # Client Groups
 $_ADMINLANG['clientgroups']['title'] = "Grupos de clientes";
