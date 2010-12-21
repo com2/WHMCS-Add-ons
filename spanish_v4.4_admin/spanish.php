@@ -1552,24 +1552,24 @@ $_ADMINLANG['bans']['format'] = "Format: DD/MM/YYYY HH:MM"; #format cannot be ch
 $_ADMINLANG['bans']['addbannedip'] = "Add Banned IP";
 
 # Client Groups
-$_ADMINLANG['clientgroups']['title'] = "Client Groups";
-$_ADMINLANG['clientgroups']['addsuccess'] = "Group Added Successfully!";
-$_ADMINLANG['clientgroups']['addsuccessinfo'] = "The Client Group has been added successfully";
-$_ADMINLANG['clientgroups']['editsuccess'] = "Group Updated Successfully!";
-$_ADMINLANG['clientgroups']['editsuccessinfo'] = "The Client Group has been updated successfully";
-$_ADMINLANG['clientgroups']['delsuccess'] = "Group Deleted Successfully!";
-$_ADMINLANG['clientgroups']['delsuccessinfo'] = "The Client Group has now been deleted";
-$_ADMINLANG['clientgroups']['delerrorinfo'] = "You cannot delete a Client Group while it is in use";
-$_ADMINLANG['clientgroups']['delsure'] = "Click OK if you are sure you want to delete this Client Group?";
-$_ADMINLANG['clientgroups']['info'] = "Client Groups can be used to differentiate between your customers more easily and apply overides to certain functions.";
-$_ADMINLANG['clientgroups']['sample'] = "Sample";
-$_ADMINLANG['clientgroups']['groupname'] = "Group Name";
-$_ADMINLANG['clientgroups']['groupcolour'] = "Group Colour";
-$_ADMINLANG['clientgroups']['perdiscount'] = "% Discount";
-$_ADMINLANG['clientgroups']['susptermexempt'] = "Suspend/Terminate Exempt";
-$_ADMINLANG['clientgroups']['clientgroup'] = "Client Group";
-$_ADMINLANG['clientgroups']['grpdispercent'] = "Group Discount %";
-$_ADMINLANG['clientgroups']['exemptsusterm'] = "Exempt from Suspend & Terminate";
+$_ADMINLANG['clientgroups']['title'] = "Grupos de clientes";
+$_ADMINLANG['clientgroups']['addsuccess'] = "Grupo creado correctamente";
+$_ADMINLANG['clientgroups']['addsuccessinfo'] = "El grupo de clientes ha sido creado correctamente";
+$_ADMINLANG['clientgroups']['editsuccess'] = "Grupo actualizado correctamente!";
+$_ADMINLANG['clientgroups']['editsuccessinfo'] = "El grupo de clientes ha sido actualizado correctamente";
+$_ADMINLANG['clientgroups']['delsuccess'] = "Grupo eliminado correctamente!";
+$_ADMINLANG['clientgroups']['delsuccessinfo'] = "El grupo de clientes ha sido eliminado";
+$_ADMINLANG['clientgroups']['delerrorinfo'] = "No puede borrar un Grupo de cliente mientras está en uso";
+$_ADMINLANG['clientgroups']['delsure'] = "Pulse OK si está seguro de que desea borrar el Grupo de clientes";
+$_ADMINLANG['clientgroups']['info'] = "Los grupos de clientes se usan para diferenciar más facilmente a los clientes y aplicar determinados parámetros de forma global.";
+$_ADMINLANG['clientgroups']['sample'] = "Ejemplo";
+$_ADMINLANG['clientgroups']['groupname'] = "Nombre del grupo";
+$_ADMINLANG['clientgroups']['groupcolour'] = "Color del grupo";
+$_ADMINLANG['clientgroups']['perdiscount'] = "% Descuento";
+$_ADMINLANG['clientgroups']['susptermexempt'] = "Exento de Suspender/Terminar";
+$_ADMINLANG['clientgroups']['clientgroup'] = "Grupo de clientes";
+$_ADMINLANG['clientgroups']['grpdispercent'] = "Descuento del grupo %";
+$_ADMINLANG['clientgroups']['exemptsusterm'] = "Exento de Suspender/Terminar";
 
 # Custom Fields
 $_ADMINLANG['customfields']['clienttitle'] = "Campos personalizados de clientes";
