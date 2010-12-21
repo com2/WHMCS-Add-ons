@@ -1,7 +1,4 @@
 <?php
-######## TRADUCCIÓN ESPAÑOL ADMINISTRACIÓN WHMCS #######
-################## VERSIÓN 4.4.1 #######################
-## Colaboradores Traducción: www.m2estudio.es
 
 # Global
 $_ADMINLANG['global']['hometitle'] = "Resumen";
@@ -39,7 +36,7 @@ $_ADMINLANG['global']['cancelchanges'] = "Cancelar cambios";
 $_ADMINLANG['global']['delete'] = "Borrar";
 $_ADMINLANG['global']['validationerror'] = "Error de validaci&oacute;n";
 $_ADMINLANG['global']['none'] = "Ninguno";
-$_ADMINLANG['global']['default'] = "Por defecto";
+$_ADMINLANG['global']['default'] = "Predeterminado";
 $_ADMINLANG['global']['language'] = "Lenguaje";
 $_ADMINLANG['global']['disable'] = "Descactivar";
 $_ADMINLANG['global']['automatic'] = "Automatico";
@@ -1597,35 +1594,35 @@ $_ADMINLANG['customfields']['addfield'] = "Add New Custom Field";
 $_ADMINLANG['customfields']['orderform'] = "Show on Order Form";
 
 # Email Templates
-$_ADMINLANG['emailtpls']['title'] = "Email Templates";
-$_ADMINLANG['emailtpls']['updatesuccess'] = "Email Template Updated Successfully";
-$_ADMINLANG['emailtpls']['updatesuccessinfo'] = "The changes to the email template have been saved.";
-$_ADMINLANG['emailtpls']['delsuccess'] = "Email Template Deleted Successfully!";
-$_ADMINLANG['emailtpls']['delsuccessinfo'] = "The selected email template has now been deleted.";
-$_ADMINLANG['emailtpls']['delsure'] = "Are you sure you want to delete this email template?";
-$_ADMINLANG['emailtpls']['info'] = "The default email templates that come supplied with the system are sent when certain events occur.  You can also create custom templates which you can send to clients manually at any time or assign to products as their welcome email.";
-$_ADMINLANG['emailtpls']['messages'] = "Messages";
-$_ADMINLANG['emailtpls']['disabled'] = "Disabled";
-$_ADMINLANG['emailtpls']['createnew'] = "Create New Email Template";
-$_ADMINLANG['emailtpls']['uniquename'] = "Unique Name";
-$_ADMINLANG['emailtpls']['create'] = "Create";
-$_ADMINLANG['emailtpls']['activelang'] = "Active Languages";
-$_ADMINLANG['emailtpls']['chooseone'] = "Choose one...";
-$_ADMINLANG['emailtpls']['commasep'] = "Enter email addresses separated by a comma";
-$_ADMINLANG['emailtpls']['plaintext'] = "Plain-Text";
-$_ADMINLANG['emailtpls']['plaintextinfo'] = "Tick this box to send this email in Plain-Text format only";
-$_ADMINLANG['emailtpls']['disableinfo'] = "Tick this box to disable this email from being sent";
-$_ADMINLANG['emailtpls']['defaultversion'] = "Default Version";
-$_ADMINLANG['emailtpls']['version'] = "Version";
-$_ADMINLANG['emailtpls']['rteditor'] = "Enable/Disable Rich-Text Editor";
-$_ADMINLANG['emailtpls']['typeproduct'] = "Product";
-$_ADMINLANG['emailtpls']['typedomain'] = "Domain";
-$_ADMINLANG['emailtpls']['typesupport'] = "Support";
+$_ADMINLANG['emailtpls']['title'] = "Plantillas de correos";
+$_ADMINLANG['emailtpls']['updatesuccess'] = "La plantilla de correo ha sido actualizada correctamente";
+$_ADMINLANG['emailtpls']['updatesuccessinfo'] = "Los cambios en la plantilla de correo han sido guardados.";
+$_ADMINLANG['emailtpls']['delsuccess'] = "La plantilla de correo ha sido borrada correctamente";
+$_ADMINLANG['emailtpls']['delsuccessinfo'] = "La plantilla de correo seleccionada ha sido borrada.";
+$_ADMINLANG['emailtpls']['delsure'] = "Â¿EstÃ¡ seguro de que desea borrar esta plantilla de correo?";
+$_ADMINLANG['emailtpls']['info'] = "Las plantillas de correo predeterminadas que vienen incluidas con el sistema son enviadas cuando ocurren ciertos errores. TambiÃ©n puede crear plantillas personalizadas para enviarlas manualmente a sus clientes en cualquier momento, o asignarlas a productos como correos de bienvenida.";
+$_ADMINLANG['emailtpls']['messages'] = "Mensajes";
+$_ADMINLANG['emailtpls']['disabled'] = "Deshabilitado";
+$_ADMINLANG['emailtpls']['createnew'] = "Crear nueva plantilla de correo";
+$_ADMINLANG['emailtpls']['uniquename'] = "Nombre Ãºnico";
+$_ADMINLANG['emailtpls']['create'] = "Crear";
+$_ADMINLANG['emailtpls']['activelang'] = "Idiomas activos";
+$_ADMINLANG['emailtpls']['chooseone'] = "Seleccione uno...";
+$_ADMINLANG['emailtpls']['commasep'] = "Introduzca las direcciones de correo separadas por una coma";
+$_ADMINLANG['emailtpls']['plaintext'] = "Texto plano";
+$_ADMINLANG['emailtpls']['plaintextinfo'] = "Seleccione esta opciÃ³n para enviar correos usando sÃ³lo texto plano";
+$_ADMINLANG['emailtpls']['disableinfo'] = "Seleccione esta opciÃ³n para deshabilitar el envÃ­o de este correo";
+$_ADMINLANG['emailtpls']['defaultversion'] = "VersiÃ³n predeterminada";
+$_ADMINLANG['emailtpls']['version'] = "VersiÃ³n";
+$_ADMINLANG['emailtpls']['rteditor'] = "Habilitar/Deshabilitar editor avanzado";
+$_ADMINLANG['emailtpls']['typeproduct'] = "Producto";
+$_ADMINLANG['emailtpls']['typedomain'] = "Dominio";
+$_ADMINLANG['emailtpls']['typesupport'] = "Soporte";
 $_ADMINLANG['emailtpls']['typegeneral'] = "General";
-$_ADMINLANG['emailtpls']['typeinvoice'] = "Invoice";
-$_ADMINLANG['emailtpls']['typeaffiliate'] = "Affiliate";
+$_ADMINLANG['emailtpls']['typeinvoice'] = "Factura";
+$_ADMINLANG['emailtpls']['typeaffiliate'] = "Afiliado";
 $_ADMINLANG['emailtpls']['typeadmin'] = "Admin";
-$_ADMINLANG['emailtpls']['copyto'] = "Copy To";
+$_ADMINLANG['emailtpls']['copyto'] = "Copiar a";
 
 # Merge Fields
 $_ADMINLANG['mergefields']['title'] = "Available Merge Fields";
