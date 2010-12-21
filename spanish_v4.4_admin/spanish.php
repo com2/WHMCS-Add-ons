@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 # Global
 $_ADMINLANG['global']['hometitle'] = "Resumen";
