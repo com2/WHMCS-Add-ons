@@ -1004,10 +1004,10 @@ $_ADMINLANG['contactpermissions']['permemails'] = "View Emails";
 $_ADMINLANG['contactpermissions']['permorders'] = "Place New Orders/Upgrades/Cancellations";
 
 # Statuses
-$_ADMINLANG['status']['active'] = "Active";
-$_ADMINLANG['status']['inactive'] = "Inactive";
-$_ADMINLANG['status']['closed'] = "Closed";
-$_ADMINLANG['status']['pending'] = "Pending";
+$_ADMINLANG['status']['active'] = "Activo";
+$_ADMINLANG['status']['inactive'] = "Inactivo";
+$_ADMINLANG['status']['closed'] = "Cerrado";
+$_ADMINLANG['status']['pending'] = "Pendiente";
 $_ADMINLANG['status']['suspended'] = "Suspended";
 $_ADMINLANG['status']['fraud'] = "Fraud";
 $_ADMINLANG['status']['cancelled'] = "Cancelled";
