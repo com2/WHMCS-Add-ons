@@ -1,7 +1,4 @@
-<?php
-######## TRADUCCIÓN ESPAÑOL ADMINISTRACIÓN WHMCS #######
-################## VERSIÓN 4.4.1 #######################
-## Colaboradores Traducción: www.m2estudio.es
+﻿<?php
 
 # Global
 $_ADMINLANG['global']['hometitle'] = "Resumen";
