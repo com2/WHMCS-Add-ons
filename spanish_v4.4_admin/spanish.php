@@ -873,7 +873,7 @@ $_ADMINLANG['setup']['customfields'] = "Campos personalizados";
 
 # Help
 $_ADMINLANG['help']['title'] = "Ayuda";
-$_ADMINLANG['help']['docs'] = "Documentación ";
+$_ADMINLANG['help']['docs'] = "Documentación";
 $_ADMINLANG['help']['licenseinfo'] = "Información de licencia";
 $_ADMINLANG['help']['changelicense'] = "Cambiar llave de licencia";
 $_ADMINLANG['help']['updates'] = "Chequear actualizaciones";
@@ -1172,31 +1172,31 @@ $_ADMINLANG['credit']['deleteq'] = "Are you sure you want to delete this credit 
 $_ADMINLANG['credit']['addcredit'] = "Add Credit";
 
 # Calendar
-$_ADMINLANG['calendar']['addnew'] = "Add New Event";
-$_ADMINLANG['calendar']['title'] = "Title";
-$_ADMINLANG['calendar']['start'] = "Start Time";
-$_ADMINLANG['calendar']['recurrence'] = "Recurrence";
-$_ADMINLANG['calendar']['onceonly'] = "Once Only";
-$_ADMINLANG['calendar']['daily'] = "Daily";
-$_ADMINLANG['calendar']['weekly'] = "Weekly";
-$_ADMINLANG['calendar']['monthly'] = "Monthly";
-$_ADMINLANG['calendar']['yearly'] = "Yearly";
-$_ADMINLANG['calendar']['end'] = "End Time";
-$_ADMINLANG['calendar']['numreccurences'] = "No. of Recurrences";
-$_ADMINLANG['calendar']['addevent'] = "Add Event";
-$_ADMINLANG['calendar']['editevent'] = "Edit Event";
-$_ADMINLANG['calendar']['duepayments'] = "Due Payments";
-$_ADMINLANG['calendar']['dueaddonpayments'] = "Due Addon Payments";
-$_ADMINLANG['calendar']['expiringdomains'] = "Expiring Domains";
-$_ADMINLANG['calendar']['events'] = "Events";
-$_ADMINLANG['calendar']['todoitems'] = "To-Do Items";
-$_ADMINLANG['calendar']['view'] = "View";
-$_ADMINLANG['calendar']['starexplanation'] = "If there is a * next to an event then it means that there is a description.  Move your mouse over the * to view the description.";
-$_ADMINLANG['calendar']['doubleclick'] = "To add a new calendar event, double click the cell you wish to add it to.";
-$_ADMINLANG['calendar']['selectmonth'] = "Select a Month to View";
+$_ADMINLANG['calendar']['addnew'] = "Añadir evento";
+$_ADMINLANG['calendar']['title'] = "Título";
+$_ADMINLANG['calendar']['start'] = "Hora de inicio";
+$_ADMINLANG['calendar']['recurrence'] = "Recurrencia";
+$_ADMINLANG['calendar']['onceonly'] = "Sólo una vez";
+$_ADMINLANG['calendar']['daily'] = "Diaria";
+$_ADMINLANG['calendar']['weekly'] = "Semanal";
+$_ADMINLANG['calendar']['monthly'] = "Mensual";
+$_ADMINLANG['calendar']['yearly'] = "Anual";
+$_ADMINLANG['calendar']['end'] = "Finaliza el";
+$_ADMINLANG['calendar']['numreccurences'] = "No. de recurrencias";
+$_ADMINLANG['calendar']['addevent'] = "Añadir evento";
+$_ADMINLANG['calendar']['editevent'] = "Editar evento";
+$_ADMINLANG['calendar']['duepayments'] = "Pagos que vencen";
+$_ADMINLANG['calendar']['dueaddonpayments'] = "Pagos extras que vencen";
+$_ADMINLANG['calendar']['expiringdomains'] = "Dominios que expiran";
+$_ADMINLANG['calendar']['events'] = "Eventos";
+$_ADMINLANG['calendar']['todoitems'] = "Cosas por hacer";
+$_ADMINLANG['calendar']['view'] = "Ver";
+$_ADMINLANG['calendar']['starexplanation'] = "Si hay un * junto a un evento significa que tiene descripción. Mueva el ratón sobre el * para ver la descripción.";
+$_ADMINLANG['calendar']['doubleclick'] = "Para añadir un nuevo al calendario, haga doble click en la celda donde quiera añadirlo.";
+$_ADMINLANG['calendar']['selectmonth'] = "Seleccione un mes para ver";
 
 # Promotions
-$_ADMINLANG['promotions']['noaffect'] = "Change will not affect price";
+$_ADMINLANG['promotions']['noaffect'] = "El cambio no afectará al precio";
 
 # Months
 $_ADMINLANG['months']['january'] = "Enero";
