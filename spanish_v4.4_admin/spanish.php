@@ -1413,20 +1413,20 @@ $_ADMINLANG['automation']['usage'] = "Update Usage Statistics";
 $_ADMINLANG['automation']['usageinfo'] = "Tick this box to update automatically when the cron runs";
 
 # Backups
-$_ADMINLANG['backups']['title'] = "Database Backups";
-$_ADMINLANG['backups']['changesuccess'] = "Changes Saved Successfully!";
-$_ADMINLANG['backups']['changesuccessinfo'] = "The changes to the backup settings have been saved successfully.";
-$_ADMINLANG['backups']['description'] = "The database is where all your WHMCS data is stored and so is very important. It is therefore recomended that you take regular backups of it. There are 2 built in solutions for backing up the database using the daily cron - one is email and the other is an FTP backup to a remote server. These can be configured below.";
-$_ADMINLANG['backups']['dailyemail'] = "Daily Email Backups";
-$_ADMINLANG['backups']['emailinfo'] = "Enter the email to send the backup file to";
-$_ADMINLANG['backups']['blanktodisable'] = "leave blank to disable";
-$_ADMINLANG['backups']['dailyftp'] = "Daily Remote FTP Backup";
-$_ADMINLANG['backups']['relativepath'] = "Relative path to login folder";
-$_ADMINLANG['backups']['hostnameinfo'] = "eg. ftp.yourdomain.com";
-$_ADMINLANG['backups']['ftpuser'] = "FTP Username";
-$_ADMINLANG['backups']['ftppass'] = "FTP Password";
-$_ADMINLANG['backups']['ftphost'] = "FTP Hostname";
-$_ADMINLANG['backups']['ftppath'] = "FTP Destination";
+$_ADMINLANG['backups']['title'] = "Copia de seguridad de la Base de Datos";
+$_ADMINLANG['backups']['changesuccess'] = "Cambios guardados correctamente";
+$_ADMINLANG['backups']['changesuccessinfo'] = "Los cambios en la copia de seguridad de la base de datos se han guardado correctamente.";
+$_ADMINLANG['backups']['description'] = "La base de datos es donde se almacenan todos los datos de WHMCS y por eso es muy importante realizar copias de seguridad de forma regular. Existen dos soluciones integradas para hacer copia de la base de datos usando el Cron diario - una es a través del correo y otra es usando un servidor FTP remoto. Aquí se pueden configurar ambos métodos.";
+$_ADMINLANG['backups']['dailyemail'] = "Copia de seguridad diaria por correo electrónico";
+$_ADMINLANG['backups']['emailinfo'] = "Introduzca la dirección a la que enviar el archivo con la copia";
+$_ADMINLANG['backups']['blanktodisable'] = "dejar en blanco para dehabilitar";
+$_ADMINLANG['backups']['dailyftp'] = "Copia de seguridad diaria por FTP";
+$_ADMINLANG['backups']['relativepath'] = "Ruta relativa al directorio FTP inicial";
+$_ADMINLANG['backups']['hostnameinfo'] = "ej. ftp.midominio.com";
+$_ADMINLANG['backups']['ftpuser'] = "Usuario FTP";
+$_ADMINLANG['backups']['ftppass'] = "Contraseña FTP";
+$_ADMINLANG['backups']['ftphost'] = "Servidor FTP";
+$_ADMINLANG['backups']['ftppath'] = "Directorio FTP";
 
 # System
 $_ADMINLANG['system']['activitylog'] = "Registro de actividad del sistema";
