@@ -185,9 +185,9 @@ $_ADMINLANG['clientsummary']['activeclient'] = "Cliente Activo";
 $_ADMINLANG['clientsummary']['summary'] = "Resumen";
 $_ADMINLANG['clientsummary']['profile'] = "Perfil";
 $_ADMINLANG['clientsummary']['contacts'] = "Contactos";
-$_ADMINLANG['clientsummary']['products'] = "Productos y servicios";
+$_ADMINLANG['clientsummary']['products'] = "Productos/servicios";
 $_ADMINLANG['clientsummary']['domains'] = "Dominios";
-$_ADMINLANG['clientsummary']['billableitems'] = "Items facturables";
+$_ADMINLANG['clientsummary']['billableitems'] = "Facturación";
 $_ADMINLANG['clientsummary']['invoices'] = "Facturas";
 $_ADMINLANG['clientsummary']['quotes'] = "Presupuestos";
 $_ADMINLANG['clientsummary']['transactions'] = "Pagos";
@@ -234,7 +234,7 @@ $_ADMINLANG['clientsummary']['invoiceselected'] = "Facturar servicios selecciona
 $_ADMINLANG['clientsummary']['deleteselected'] = "Borrar servicios seleccionados";
 
 # Services
-$_ADMINLANG['services']['title'] = "Productos y servicios";
+$_ADMINLANG['services']['title'] = "Productos/servicios";
 $_ADMINLANG['services']['listall'] = "Todos los productos/servicios";
 $_ADMINLANG['services']['listhosting'] = "Hospedaje compartido";
 $_ADMINLANG['services']['listreseller'] = "Cuentas Reseller";
@@ -514,7 +514,7 @@ $_ADMINLANG['invoices']['mergeerror'] = "Error al combinar";
 $_ADMINLANG['invoices']['mergeerrordesc'] = "Debe seleccionar al menos 2 facturas para combinar";
 
 # Billable Items
-$_ADMINLANG['billableitems']['title'] = "Items facturables";
+$_ADMINLANG['billableitems']['title'] = "Facturación";
 $_ADMINLANG['billableitems']['listall'] = "Mostrar items facturables";
 $_ADMINLANG['billableitems']['uninvoiced'] = "Items sin facturar";
 $_ADMINLANG['billableitems']['recurring'] = "Items recurrentes";
