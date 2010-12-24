@@ -240,18 +240,18 @@ $_ADMINLANG['services']['listhosting'] = "Hospedaje compartido";
 $_ADMINLANG['services']['listreseller'] = "Cuentas Reseller";
 $_ADMINLANG['services']['listservers'] = "VPS/Servidores";
 $_ADMINLANG['services']['listother'] = "Otros servicios";
-$_ADMINLANG['services']['listaddons'] = "Servicios Addons";
+$_ADMINLANG['services']['listaddons'] = "Complementos de servicios";
 $_ADMINLANG['services']['listdomains'] = "Registro de dominios";
-$_ADMINLANG['services']['upgradedowngrade'] = "Upgrade/Downgrade";
+$_ADMINLANG['services']['upgradedowngrade'] = "Ampliar/Downgrade";	// ToDo
 $_ADMINLANG['services']['daysleft'] = "Días que quedan del ciclo actual";
-$_ADMINLANG['services']['upgradedue'] = "Upgrade Total Due";
+$_ADMINLANG['services']['upgradedue'] = "Coste total de la ampliación";
 $_ADMINLANG['services']['related'] = "Productos/Servicios relacionados";
-$_ADMINLANG['services']['upgradetype'] = "Tipo de Upgrade";
-$_ADMINLANG['services']['productcycle'] = "Productos / Ciclo de facturación";
+$_ADMINLANG['services']['upgradetype'] = "Tipo de ampliación";
+$_ADMINLANG['services']['productcycle'] = "Producto / Ciclo de facturación";
 $_ADMINLANG['services']['newservice'] = "Nuevo Producto/Servicio";
-$_ADMINLANG['services']['nochanges'] = "Na hay cambios detectados";
-$_ADMINLANG['services']['upgradesummary'] = "Resumen Upgrade";
-$_ADMINLANG['services']['upgradesummaryinfo'] = "Haga los cambios de arriba para calcular el precio";
+$_ADMINLANG['services']['nochanges'] = "No ha habido cambios";
+$_ADMINLANG['services']['upgradesummary'] = "Actualizar resumen";
+$_ADMINLANG['services']['upgradesummaryinfo'] = "Hacer los cambios de arriba para calcular el precio";
 
 # Addons
 $_ADMINLANG['addons']['title'] = "Complementos";
