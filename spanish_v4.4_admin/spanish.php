@@ -457,7 +457,7 @@ $_ADMINLANG['billing']['incometoday'] = "Hoy";
 $_ADMINLANG['billing']['incomethismonth'] = "Este mes";
 $_ADMINLANG['billing']['incomethisyear'] = "Este año";
 $_ADMINLANG['billing']['annualestimate'] = "Est. anual";
-$_ADMINLANG['billing']['offlinecc'] = "Offline CC Processing";	// ToDo
+$_ADMINLANG['billing']['offlinecc'] = "Cobros por tarjeta";	// ToDo
 $_ADMINLANG['billing']['gatewaylog'] = "Registro de pasarela";
 
 # Invoices
@@ -1089,7 +1089,7 @@ $_ADMINLANG['permissions']['36'] = "Delete Invoice";
 $_ADMINLANG['permissions']['92'] = "Refund Invoice Payments";
 $_ADMINLANG['permissions']['89'] = "View Billable Items";
 $_ADMINLANG['permissions']['90'] = "Manage Billable Items";
-$_ADMINLANG['permissions']['37'] = "Offline Credit Card Processing";
+$_ADMINLANG['permissions']['37'] = "Cobros por tarjeta de crédito";
 $_ADMINLANG['permissions']['32'] = "View Gateway Log";
 $_ADMINLANG['permissions']['85'] = "Manage Quotes";
 $_ADMINLANG['permissions']['38'] = "Support Center Overview";
