@@ -1615,13 +1615,13 @@ $_ADMINLANG['emailtpls']['disableinfo'] = "Marque esta casilla para desactivar q
 $_ADMINLANG['emailtpls']['defaultversion'] = "Versión predeterminada";
 $_ADMINLANG['emailtpls']['version'] = "Versión";
 $_ADMINLANG['emailtpls']['rteditor'] = "Habilitar/desabilitar editor de texto enriquecido";
-$_ADMINLANG['emailtpls']['typeproduct'] = "Producto";
-$_ADMINLANG['emailtpls']['typedomain'] = "Dominio";
-$_ADMINLANG['emailtpls']['typesupport'] = "Soporte";
+$_ADMINLANG['emailtpls']['typeproduct'] = "Product";
+$_ADMINLANG['emailtpls']['typedomain'] = "Domain";
+$_ADMINLANG['emailtpls']['typesupport'] = "Support";
 $_ADMINLANG['emailtpls']['typegeneral'] = "General";
-$_ADMINLANG['emailtpls']['typeinvoice'] = "Facturación";
-$_ADMINLANG['emailtpls']['typeaffiliate'] = "Afiliados";
-$_ADMINLANG['emailtpls']['typeadmin'] = "Administración";
+$_ADMINLANG['emailtpls']['typeinvoice'] = "Invoice";
+$_ADMINLANG['emailtpls']['typeaffiliate'] = "Affiliate";
+$_ADMINLANG['emailtpls']['typeadmin'] = "Admin";
 $_ADMINLANG['emailtpls']['copyto'] = "Copiar a";
 
 # Merge Fields
