@@ -1237,7 +1237,7 @@ $_ADMINLANG['emails']['cc'] = "CC";
 $_ADMINLANG['emails']['bcc'] = "BCC";
 $_ADMINLANG['emails']['subject'] = "Asunto";
 $_ADMINLANG['emails']['viewemailmessage'] = "Viendo email";
-$_ADMINLANG['emails']['suredelete'] = "Está seguro de que quiere borrar este email?";
+$_ADMINLANG['emails']['suredelete'] = "¿Está seguro de que desea borrar este email?";
 $_ADMINLANG['emails']['nosubject'] = "Sin asunto";
 $_ADMINLANG['emails']['resendemail'] = "Reenviar email";
 $_ADMINLANG['emails']['from'] = "De";
@@ -1288,22 +1288,22 @@ $_ADMINLANG['products']['associateddl'] = "Descargas asociadas";
 $_ADMINLANG['products']['welcomeemail'] = "Correo de bienvenida";
 
 # Downloads
-$_ADMINLANG['downloads']['ctrlmultiple'] = "Use Ctrl+Click para seleccionar varias descargas";
+$_ADMINLANG['downloads']['ctrlmultiple'] = "Use Ctrl+Clic para seleccionar varias descargas";
 
 # Admin Roles
-$_ADMINLANG['adminroles']['suredelete'] = "Are you sure you want to delete this Administrator Role?";
-$_ADMINLANG['adminroles']['description'] = "The administrator roles allow you to fine tune exactly what each of your admin users can do within the WHMCS admin area.";
-$_ADMINLANG['adminroles']['options'] = "Options";
-$_ADMINLANG['adminroles']['addnew'] = "Add New Role Group";
-$_ADMINLANG['adminroles']['nodeldefault'] = "You cannot delete one of the default administrator roles";
-$_ADMINLANG['adminroles']['addnewadminrole'] = "Add New Administrator Role";
-$_ADMINLANG['adminroles']['permissions'] = "Permissions";
-$_ADMINLANG['adminroles']['checkall'] = "Check All";
-$_ADMINLANG['adminroles']['uncheckall'] = "Uncheck All";
-$_ADMINLANG['adminroles']['emailmessages'] = "Email Messages";
-$_ADMINLANG['adminroles']['systememails'] = "System Emails (eg. Cron Notifications, Invalid Login Attempts, etc...)";
-$_ADMINLANG['adminroles']['accountemails'] = "Account Emails (eg. Order Confirmations, Details Changes, Automatic Setup Notifications, etc...)";
-$_ADMINLANG['adminroles']['supportemails'] = "Support Emails (eg. New Ticket & Ticket Reply Notifications)";
+$_ADMINLANG['adminroles']['suredelete'] = "¿Está seguro de que desea eliminar este rol de administrador?";
+$_ADMINLANG['adminroles']['description'] = "Los roles de administradores le permite especificar exactamente qué puede hacer cada administrador dentro del panel de administración de WHMCS.";
+$_ADMINLANG['adminroles']['options'] = "Opciones";
+$_ADMINLANG['adminroles']['addnew'] = "Crear nuevo rol";
+$_ADMINLANG['adminroles']['nodeldefault'] = "No es posible eliminar un rol predeterminado";
+$_ADMINLANG['adminroles']['addnewadminrole'] = "Añadir nuevo rol de administrador";
+$_ADMINLANG['adminroles']['permissions'] = "Permisos";
+$_ADMINLANG['adminroles']['checkall'] = "Seleccionar todos";
+$_ADMINLANG['adminroles']['uncheckall'] = "Deseleccionar todos";
+$_ADMINLANG['adminroles']['emailmessages'] = "Notificaciones";
+$_ADMINLANG['adminroles']['systememails'] = "Emails del sistema (ej. avisos de Cron, intentos de aceso, etc...)";
+$_ADMINLANG['adminroles']['accountemails'] = "Emails de cuentas(ej. confirmaciones de pedidos, cambios en los datos de clientes, avisos de altas automáticas, etc...)";
+$_ADMINLANG['adminroles']['supportemails'] = "Emails de soporte(ej. avisos de nuevos tickets o de respuestas a tickets)";
 
 # Administrators
 $_ADMINLANG['administrators']['title'] = "Administrators";
