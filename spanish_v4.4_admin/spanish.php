@@ -1572,26 +1572,26 @@ $_ADMINLANG['clientgroups']['grpdispercent'] = "Descuento del grupo %";
 $_ADMINLANG['clientgroups']['exemptsusterm'] = "Exento de suspender & terminar";
 
 # Custom Fields
-$_ADMINLANG['customfields']['clienttitle'] = "Custom Client Fields";
-$_ADMINLANG['customfields']['delsure'] = "Are you sure you want to delete this field and ALL DATA associated with it?";
-$_ADMINLANG['customfields']['clientinfo'] = "This is where you configure custom fields which appear in the clients profile.";
-$_ADMINLANG['customfields']['fieldname'] = "Field Name";
-$_ADMINLANG['customfields']['order'] = "Display Order";
-$_ADMINLANG['customfields']['fieldtype'] = "Field Type";
-$_ADMINLANG['customfields']['typetextbox'] = "Text Box";
-$_ADMINLANG['customfields']['typedropdown'] = "Drop Down";
-$_ADMINLANG['customfields']['typetickbox'] = "Tick Box";
-$_ADMINLANG['customfields']['typetextarea'] = "Text Area";
-$_ADMINLANG['customfields']['validation'] = "Validation";
-$_ADMINLANG['customfields']['validationinfo'] = "Regular Expression Validation String";
-$_ADMINLANG['customfields']['descriptioninfo'] = "The explanation to show users";
-$_ADMINLANG['customfields']['selectoptions'] = "Select Options";
-$_ADMINLANG['customfields']['selectoptionsinfo'] = "For Dropdowns Only - Comma Seperated List";
-$_ADMINLANG['customfields']['adminonly'] = "Admin Only";
-$_ADMINLANG['customfields']['requiredfield'] = "Required Field";
-$_ADMINLANG['customfields']['deletefield'] = "Delete Field";
-$_ADMINLANG['customfields']['addfield'] = "Add New Custom Field";
-$_ADMINLANG['customfields']['orderform'] = "Show on Order Form";
+$_ADMINLANG['customfields']['clienttitle'] = "Campos personalizados";
+$_ADMINLANG['customfields']['delsure'] = "¿Está seguro de que desea eliminar este campo y TODOS LOS DATOS asociados con él?";
+$_ADMINLANG['customfields']['clientinfo'] = "Desde aquí puede configurar los campos personalizados que aparecen en el perfil del cliente.";
+$_ADMINLANG['customfields']['fieldname'] = "Nombre del campo";
+$_ADMINLANG['customfields']['order'] = "Orden de aparición";
+$_ADMINLANG['customfields']['fieldtype'] = "Tipo de campo";
+$_ADMINLANG['customfields']['typetextbox'] = "Campo de texto";
+$_ADMINLANG['customfields']['typedropdown'] = "Desplegable";
+$_ADMINLANG['customfields']['typetickbox'] = "Casilla de verificación";
+$_ADMINLANG['customfields']['typetextarea'] = "Area de texto";
+$_ADMINLANG['customfields']['validation'] = "Validación";
+$_ADMINLANG['customfields']['validationinfo'] = "Expresiones regulares para validar el valor del campo";
+$_ADMINLANG['customfields']['descriptioninfo'] = "La descripción para mostrar a los usuarios";
+$_ADMINLANG['customfields']['selectoptions'] = "Opciones del desplegable";
+$_ADMINLANG['customfields']['selectoptionsinfo'] = "Sólo para desplegables - Listado separado por coma";
+$_ADMINLANG['customfields']['adminonly'] = "Sólo administradores";
+$_ADMINLANG['customfields']['requiredfield'] = "Campo obligatorio";
+$_ADMINLANG['customfields']['deletefield'] = "Borrar campo";
+$_ADMINLANG['customfields']['addfield'] = "Añadir nuevo campo personalizado";
+$_ADMINLANG['customfields']['orderform'] = "Mostrar en el formulario de pedido";
 
 # Email Templates
 $_ADMINLANG['emailtpls']['title'] = "Plantillas de email";
