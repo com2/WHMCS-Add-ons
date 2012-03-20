@@ -26,7 +26,9 @@
  * @license    http://www.gnu.org/copyleft/lesser.html  LGPL License 3
  *
 **/
- 
+/* TODO - Make it multilingual ready (don't expect only Spaniards to use it*/
+/* TODO - Give it version number*/
+
 if (!defined("WHMCS"))
 	die("This file cannot be accessed directly");
 
@@ -36,12 +38,16 @@ include_once("../includes/invoicefunctions.php");
 // Configuracion general
 $module_name = "domiciliacion_bancaria";
 $module_path = dirname(__FILE__);
-
+$module_self = $_SERVER["REQUEST_URI"];
+$module_url = $_SERVER['HTTPS']?"https://":"http://";
+$module_url .=$_SERVER['HTTP_HOST'].$module_self;
+//phpinfo();
 // Tablas base de datos
 $tbl_remesas  = "mod_domiciliaciones_remesas";
 $tbl_recibos  = "mod_domiciliaciones_recibos";
 $tbl_config   = "mod_domiciliaciones_config";
 
+/* TODO - Include upgrade query for older version with facturas table*/
 # Comprobamos la instalacion
 $is_installed = TRUE;
 if(
@@ -57,23 +63,11 @@ if(
 		echo '<p><input type="button" value="Instalar Domiciliaciones" onclick="window.location=\''.$modulelink.'&install=true\'"></p>';
 	} else {
 		instalacion();
-		header("Location: $modulelink");
+		header("Location: $module_url");
 		exit;
 	}
 }
 
-# Leemos la configuracion almacenada
-if($is_installed) {
-	$sql_config = "SELECT config, value FROM $tbl_config";
-	$res_config = mysql_query($sql_config) or die($sql_config);
-	$num_config = mysql_num_rows($res_config);
-	while(list($config, $value) = mysql_fetch_array($res_config)) {
-		$config_wdb[$config] = $value;
-	}
-}
-
-// Modo de depuracion
-$debug  = ($config_wdb['debug']) ? "1" : "0";
 
 # Almacenamos la nueva configracion
 if($_POST['configure']) {
@@ -87,8 +81,19 @@ if($_POST['configure']) {
 		if(!in_array($config, $config_wdb_excluded)) 
 		  mysql_query("INSERT INTO $tbl_config (config, value) VALUES ('$config', '$value');");
 	}
-	header("Location: $modulelink");
 }
+# Leemos la configuracion almacenada
+if($is_installed) {
+	$sql_config = "SELECT config, value FROM $tbl_config";
+	$res_config = mysql_query($sql_config) or die($sql_config);
+	$num_config = mysql_num_rows($res_config);
+	while(list($config, $value) = mysql_fetch_array($res_config)) {
+		$config_wdb[$config] = $value;
+	}
+}
+
+// Modo de depuracion
+$debug  = ($config_wdb['debug']) ? "1" : "0";
 
 # Si nos piden una descarga, servimos el archivo
 if($_GET['download']) {
@@ -278,13 +283,17 @@ function instalacion() {
 # Contenido de la pestaña Facturas
 function generar_tab_facturas() {
 
-	global $config_wdb, $module_name;
-	$payment_method  = ($_POST['payment_method'])  ? $_POST['payment_method']  : $config_wdb['payment_method'];
-	$customfield_cc  = ($_POST['customfield_cc'])  ? $_POST['customfield_cc']  : $config_wdb['customfield_cc'];
-	$customfield_nif = ($_POST['customfield_nif']) ? $_POST['customfield_nif'] : $config_wdb['customfield_nif'];
-	$invoice_status  = ($_POST['invoice_status'])  ? $_POST['invoice_status']  : $config_wdb['invoice_status'];
-	debug("\$payment_method: $payment_method");
+	global $config_wdb, $module_name, $module_self;
+	$payment_method    = ($_POST['payment_method'])    ? $_POST['payment_method']    : $config_wdb['payment_method'];
+	$customfield_cc    = ($_POST['customfield_cc'])    ? $_POST['customfield_cc']    : $config_wdb['customfield_cc'];
+	$customfield_nif   = ($_POST['customfield_nif'])   ? $_POST['customfield_nif']   : $config_wdb['customfield_nif'];
+	$invoice_status    = ($_POST['invoice_status'])    ? $_POST['invoice_status']    : $config_wdb['invoice_status'];
+    $invoice_unpresented = $invoice_status == "Unpaid";
+    $invoice_status_sql  = $invoice_status=="Presented" ? "Unpaid" : $invoice_status;
+    debug("\$payment_method: $payment_method");
 	debug("\$invoice_status: $invoice_status");
+    debug("\$invoice_status_sql: $invoice_status_sql");
+    debug("\$invoice_unpresented: $invoice_unpresented");
 	debug("Config: " . print_r($config_wdb, true));
 
 	$output = "<form method=\"post\">\n";
@@ -301,27 +310,15 @@ function generar_tab_facturas() {
 	$output .= "			Estado:&nbsp;\n";
 	$output .= "		</td>\n";
 	$output .= "		<td>\n";
-	$output .= manual_dropdown("invoice_status", array("Paid"=>"Pagadas", "Unpaid"=>"No pagadas"), $invoice_status);
+	$output .= manual_dropdown("invoice_status", array("Unpaid"=>"No pagadas","Presented"=>"Presentadas", "Paid"=>"Pagadas"), $invoice_status);
 	$output .= "		</td>\n";
-	$output .= "		<td align=\"center\">\n";
+ 	$output .= "		<td align=\"center\">\n";
 	$output .= "			<input type=\"submit\" name=\"filtrar\" value=\"Filtrar\">\n";
 	$output .= "		</td>\n";
 	$output .= "	</tr>\n";
 	$output .= "</table>\n";
 	$output .= "<input type=\"hidden\" name=\"module\" value=\"".$_GET['module']."\">\n";
 	$output .= "</form>\n";
-	
-	$sql = "SELECT IF(LENGTH(c.companyname), c.companyname, CONCAT(c.firstname,' ', c.lastname)) cliente, c.id client_id,
-					n.value nif, i.id, i.total, i.status, i.paymentmethod, b.value cc
-	FROM tblinvoices i
-	INNER JOIN tblclients c ON i.userid=c.id
-	LEFT JOIN tblcustomfieldsvalues n ON c.id=n.relid
-	LEFT JOIN tblcustomfieldsvalues b ON c.id=b.relid
-	WHERE 1
-	AND i.status='".$invoice_status."'
-	AND i.paymentmethod='".$payment_method."'
-	AND n.fieldid=".$customfield_nif."
-	AND b.fieldid=".$customfield_cc;
 
 	$sql = "SELECT 
 		c.companyname, CONCAT(c.firstname,' ', c.lastname) cliente";
@@ -340,15 +337,19 @@ function generar_tab_facturas() {
 	FROM tblinvoices i
 		INNER JOIN tblclients c ON i.userid=c.id
 	WHERE 1
-		AND i.status='".$invoice_status."'
+		AND i.status='".$invoice_status_sql."'
 		AND i.paymentmethod='".$payment_method."'
 	";
+    $sql.="AND ";
+    $sql.=$invoice_unpresented ? "NOT ": "";
+    $sql.="( i.id IN ( SELECT factura FROM mod_domiciliaciones_recibos) )
+          ";
 
-	$orderdir = $_GET['orderby'];
+	$orderdir = $_GET['order'];
 	switch($_GET['order']) {
 		case "asc": $sql_order = "asc";  $link_order = "desc"; $img_order = "desc.gif"; break;
 		case "des": $sql_order = "desc"; $link_order = "asc";  $img_order = "asc.gif";  break;
-		default:    $sql_order = "asc";  $link_order = "desc"; $img_order = "desc.gif"; break;
+		default:    $sql_order = "desc";  $link_order = "asc"; $img_order = "desc.gif"; break;
 	}
 	
 	$orderby = $_GET['orderby'];
@@ -367,19 +368,21 @@ function generar_tab_facturas() {
 		$output .= "No se han encontrado facturas que coincidan con el filtro<br>\n";
 	} else {
 		$output .= "Encontrados $num registros<br>\n";
-		
+
+/* TODO - Invoice column sort should work no matter what the status is*/
+
 		# Listado de facturas segun el filtro aplicado
 		$output .= "<form method=\"post\" name=\"invoices\">\n";
 		$output .= "<table class=\"datatable\" border='0' width=\"100%\" cellpadding=\"2\">\n";
 		$output .= "	<tr>\n";
 		$output .= "		<th><input type=\"checkbox\" id=\"checkall\" name=\"checkall\" onClick=\"checkAllInvoices()\"></th>\n";
 		$output .= "		<th>\n";
-		$output .= "			<a href='/whmcs/admin/addonmodules.php?module=$module_name&orderby=client_id'>Cliente</a>\n";
+		$output .= "			<a href='{$module_self}&orderby=client_id&order={$link_order}'>Cliente</a>\n";
 		if($orderby == 'client_id') $output .= "      <img src='images/$img_order' class='absmiddle' />\n";
 		$output .= "    </th>\n";
 		$output .= "		<th>NIF/CIF</th>\n";
 		$output .= "		<th>\n";
-		$output .= "		  <a href='/whmcs/admin/addonmodules.php?module=$module_name&orderby=invoice_id'>Factura</a>\n";
+		$output .= "		  <a href='{$module_self}&orderby=invoice_id&order={$link_order}'>Factura</a>\n";
 		if($orderby == 'invoice_id') $output .= "      <img src='images/$img_order' class='absmiddle' />\n";
 		$output .= "		</th>\n";
 		$output .= "		<th>Importe</th>\n";
@@ -463,7 +466,7 @@ function generar_tab_historial() {
 		$num_recibos = $row['num_recibos'];
 		$importe = number_format($row['importe'], 2, ',', '')." &euro;";
 		$output .= "	<tr>\n";
-		$output .= "		<td><a href=\"#\" class=\"remesa\" id=\"remesa$remesa_id\">$remesa</a></td>\n";
+		$output .= "		<td><a href=\"#remesa$remesa_id\" name=\"remesa$remesa_id\" class=\"remesa\" id=\"remesa$remesa_id\">$remesa</a></td>\n";
 		$output .= "		<td>$fecha</td>\n";
 		$output .= "		<td>$num_recibos</td>\n";
 		$output .= "		<td>$importe</td>\n";
@@ -477,7 +480,8 @@ function generar_tab_historial() {
 										LEFT JOIN mod_domiciliaciones_recibos b ON (r.id = b.remesa_id)
 										LEFT JOIN tblinvoices i ON (b.factura = i.id)
 										LEFT JOIN tblclients c ON (i.userid = c.id)
-										WHERE r.id=$remesa_id";
+										WHERE r.id=$remesa_id
+										ORDER BY i.id DESC";
 		$res_facturas = mysql_query($sql_facturas) or die("<pre>$sql_facturas</pre>ERROR: ".mysql_error());
 		while($row_facturas = mysql_fetch_array($res_facturas)) {
 			$cliente = $row_facturas['cliente'];
@@ -485,7 +489,7 @@ function generar_tab_historial() {
 			$factura = $row_facturas['factura'];
 			$estado = $row_facturas['estado'];
 			$importe = formato_moneda($row_facturas['importe']);
-			$output .= "			<tr><td>$cliente</td><td>$cod_devolucion</td><td>$factura ($estado)</td><td>$importe</td></tr>\n";
+			$output .= "			<tr><td>$cliente</td><td>$cod_devolucion</td><td><a href=\"invoices.php?action=edit&id=$factura\">$factura</a> ($estado)</td><td>$importe</td></tr>\n";
 		}
 		$output .= "    </table></td>\n";
 		$output .= "	</tr>\n";
@@ -538,7 +542,7 @@ function generar_tab_ajustes() {
 					<td class="fieldlabel">Filtro por forma de pago</td>
 					<td class="fieldarea">'.sql_dropdown("payment_method", "tblpaymentgateways", "", "gateway", $config_wdb['payment_method']).'</td>
 					<td class="fieldlabel">Filtro por estado</td>
-					<td class="fieldarea">'.manual_dropdown("invoice_status", array("Paid"=>"Pagadas", "Unpaid"=>"No pagadas"), $config_wdb['invoice_status']).'</td>
+					<td class="fieldarea">'.manual_dropdown("invoice_status", array("Unpaid"=>"No pagadas","Presented"=>"Presentadas","Paid"=>"Pagadas"), $config_wdb['invoice_status']).'</td>
 				</tr>
 				<tr>
 					<td class="fieldlabel">Salto de línea</td>
@@ -636,7 +640,7 @@ function generar_c19($selectedinvoices="") {
 		default: 	$EOL = "\n";						break;
 	}
 	
-	$this_time = time();
+    $this_time= date("YmdHis");
 	$c19_filename = $this_time . "." . $config_wdb['file_ext'];
 	$c19_filepath = "$module_path/$c19_filename";
 	if(!is_array($selectedinvoices) || count($selectedinvoices)<1) {
@@ -708,7 +712,7 @@ function generar_c19($selectedinvoices="") {
 		$data['importe']        = number_format($row['importe'], 2, ',', '');
 		$data['cod_devolucion'] = $cod_devolucion;
 		$data['ref_interna']    = $ref_interna;
-		$data['concepto']       = "FACTURA " . $data['invoiceid'];
+		$data['concepto']       = "FACTURA PROFORMA " . $data['invoiceid'];
 		$individual_obligatorio .= $c19->individual_obligatorio($data).$EOL;
 		$total_domiciliaciones++;
 		$total_importes += str_replace(',', '.', $data['importe']);
